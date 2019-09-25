@@ -4,8 +4,6 @@
 
 // Student name: Tomas Vosylius / 1042957
 
-using namespace std;
-
 bool IntegerMeetsBaseRequirements(int base)
 {
     // Base number has be one of (2, 8, 10, or 16).
@@ -16,7 +14,7 @@ bool IntegerMeetsBaseRequirements(int base)
     //      if it is in range [2, 16]
     return (( !((base) & (base - 1)) || base == 10) && base >= 2 && base <= 16 && base != 4);
 }
-bool InputMeetsStringRequirements(string input)
+bool InputMeetsStringRequirements(std::string input)
 {
     return (input.length() == 4);
 }
@@ -41,7 +39,7 @@ int main()
         int
             inputBase = -1,
             outputBase = -1;
-        string
+        std::string
             input;
 
         // -----------------------------------------------------------------------------------
@@ -53,7 +51,7 @@ int main()
 
             // Ignoring character or string inputs, otherwise it'll give us infinite loop
             std::cin.clear();
-            std::cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
         while(!IntegerMeetsBaseRequirements(inputBase));
 
@@ -66,7 +64,7 @@ int main()
 
             // Ignoring character or string inputs, otherwise it'll give us infinite loop
             std::cin.clear();
-            std::cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         }
         while(!IntegerMeetsBaseRequirements(outputBase));
 
